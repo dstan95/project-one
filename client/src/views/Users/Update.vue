@@ -90,6 +90,9 @@ export default {
       UserAccessService.updateUser(that.$route.params.id, that.updateUser)
       .then(result =>
       {
+        this.$router.push({
+          name: Constants.ROUTES.USERS
+        });
           console.log('update succcesfully');
       })
       .catch(error => {

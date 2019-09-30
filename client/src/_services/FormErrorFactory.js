@@ -29,5 +29,36 @@ export default {
 
     getUserErrorModel(){
         return this.userErrorData;
+    },
+    listErrorData: {
+        name: {
+            required: "This field can not be empty",
+            min: "The field may not be smaller than 2 characters",
+            max: "The field may not be greater than 100 characters"
+        },
+        description: {
+            required: "This field can not be empty",
+            min: "The field may not be smaller than 2 characters",
+            max: "The field may not be greater than 100 characters"
+        },
+        asignee: {
+            required: "This field can not be empty"
+        },
+        createdBy: {
+            required: "This field can not be empty",
+            min: "The field may not be smaller than 2 characters",
+            max: "The field may not be greater than 100 characters"
+        },
+        tags: {
+            required: "This field can not be empty",
+            min: "The field may not be smaller than 2 characters",
+            max: "The field may not be greater than 100 characters"
+        },
+        daysOpen: {
+            required: "This field can not be empty"
+        }
+    },
+    getListErrorModel(){
+        return this.listErrorData;
     }
 }

@@ -2,69 +2,69 @@ import HttpService from './HttpService';
 import RestConstants from './RestConstants';
 
 export default {
-    addUser: function (user) {
+    addList: function (list) {
         return new Promise(function (resolve, reject) {
-            HttpService.post(RestConstants.USERS, user)
+            HttpService.post(RestConstants.USERS, list)
                 .then(result => {
-                    console.log('UserAccessService ok');
+                    console.log('ListAccessService ok');
                     return resolve(result);
                 })
                 .catch(err => {
-                    console.log('UserAccessService NOT ok');
+                    console.log('ListAccessService NOT ok');
                     return reject(err);
                 })
         });
     },
 
-    getUsers: function () {
+    getLists: function () {
         return new Promise(function (resolve, reject) {
             HttpService.get(RestConstants.USERS)
                 .then(result => {
-                    console.log('UserAccessService ok/ get user');
+                    console.log('ListAccessService ok/ get list');
                     return resolve(result);
                 })
                 .catch(err => {
-                    console.log('UserAccessService NOT ok/ get user');
+                    console.log('ListAccessService NOT ok/ get list');
                     return reject(err);
                 })
         });
     },
 
-    getUser: function (id) {
+    getList: function (id) {
         return new Promise(function (resolve, reject) {
             HttpService.get(RestConstants.USERS + id)
                 .then(result => {
-                    console.log('UserAccessService ok/ get user');
+                    console.log('ListAccessService ok/ get list');
                     return resolve(result);
                 })
                 .catch(err => {
-                    console.log('UserAccessService NOT ok/ get user');
+                    console.log('ListAccessService NOT ok/ get list');
                     return reject(err);
                 })
         });
     },
-    updateUser: function (id, user) {
+    updateList: function (id, list) {
         return new Promise(function (resolve, reject) {
-            HttpService.put(RestConstants.USERS + id, user)
+            HttpService.put(RestConstants.USERS + id, list)
                 .then(result => {
-                    console.log('UserAccessServicce ok/ update user');
+                    console.log('ListAccessServicce ok/ update list');
                     return resolve(result);
                 })
                 .catch(err => {
-                    console.log('UserAccessService NOT ok/ update user');
+                    console.log('ListAccessService NOT ok/ update list');
                     return reject(err);
                 })
         });
     },
-    deleteUser: function (id) {
+    deleteList: function (id) {
         return new Promise(function (resolve, reject) {
             HttpService.delete(RestConstants.USERS + id)
             .then(result => {
-                console.log('UsserAccessService ok/ delete user ');
+                console.log('UsserAccessService ok/ delete list ');
                 return resolve(result);
             })
             .catch(err => {
-                console.log('UserAccessService NOT ok/ delete user' + id);
+                console.log('ListAccessService NOT ok/ delete list' + id);
                 return reject(err);
             })
         });

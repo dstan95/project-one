@@ -7,7 +7,7 @@
             <v-icon>mdi-view-dashboard</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Dashboard</v-list-item-title>
+            <v-list-item-title><router-link :to="{name: constants.ROUTES.HOME}">Dashboard</router-link></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item @click>
@@ -15,7 +15,7 @@
             <v-icon>mdi-settings</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Settings</v-list-item-title>
+            <v-list-item-title><router-link :to="{name: constants.ROUTES.USERS}">Users</router-link></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -29,12 +29,14 @@
 </template>
 
 <script>
+import Constants from "../_services/Constants";
 export default {
   props: {
     source: String
   },
   data: () => ({
-    drawer: false
+    drawer: false,
+    constants: Constants
   }),
   created() {
     this.$vuetify.theme.dark = true;
